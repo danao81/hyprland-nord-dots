@@ -1,0 +1,382 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+   
+    border: none;
+    border-radius: 20px;
+    font-family: FiraCode, MesloLGS NF;
+    font-size: 14px;
+}
+
+
+
+window#waybar {
+    background-color: rgba(46, 52, 64, 0.0);
+    border-bottom: none;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+
+}
+
+
+#waybar.empty #window  {
+
+     background: none;
+     border: none;
+
+
+}
+
+
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inherit;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 10px;
+    margin: 0 5px;
+   
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    transition: none;
+    
+}
+
+#workspaces button {
+    padding: 0 5px;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+    background-color: #5e81ac;
+    color: #2e3440;
+}
+
+#workspaces button:hover {
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+#workspaces button.active {
+    background-color: #88c0d0;
+    box-shadow: inherit;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+
+
+}
+
+
+
+#workspaces button.urgent {
+    background-color: #6272a4;
+}
+
+#mode, 
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-weather,
+#wireplumber,
+#custom-spotify,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd, 
+#window,
+#workspaces {
+    margin: 0 2px;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#window {
+     background-color: #4c566a;
+     color: #d8dee9;
+     border: 2px;
+     border-style: solid;
+     border-color: #2e3440	
+}
+
+
+#clock {
+    background-color: #434c5e;
+    color: #81a1c1;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+
+#custom-weather {
+     background-color: #434c5e;
+     color: #81a1c1;
+     border: 2px;
+     border-style: solid;
+     border-color: #2e3440;
+
+}
+
+
+#battery {
+    background-color: #434c5e;
+    color: #f1fa8c;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#battery.charging, #battery.plugged {
+    color: #f1fa8c;
+    background-color: #ff5555;
+}
+
+@keyframes blink-update {
+	to {
+		background-color: #3b4252;
+	}
+}
+
+#custom-pacman {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+#custom-pacman.pending-updates {
+	animation-name: blink-update;
+	animation-duration: 3s;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff5555;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: #434c5e;
+    color: #81a1c1;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#memory {
+    background-color: #434c5e;
+    color: #81a1c1;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #8be9fd;
+    color: #282a36;
+}
+
+#network {
+    background-color: #434c5e;
+    color: #81a1c1;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#network.disconnected {
+    background-color: #bf616a;
+}
+
+#pulseaudio {
+    background-color: #f1c40f;
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: #ff5555;
+    color: #f1fa8c;
+}
+
+#wireplumber {
+    background-color: #434c5e;
+    color: #81a1c1;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#wireplumber.muted {
+    background-color: #434c5e;
+    color: #bf616a;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#custom-spotify {
+    background-color: #81a1c1;
+    color: #2e3440;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature {
+    background-color: #434c5e;
+    color: #81a1c1;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
+}
+
+#temperature.critical {
+    background-color: #bf616a;
+}
+
+#tray {
+    background-color: #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#custom-pacman {
+    background-color: #4c566a;
+    color: #81a1c1;
+    margin: 0 2px;
+    padding: 0 10px;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440
+}

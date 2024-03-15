@@ -57,7 +57,7 @@ button {
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 10px;
-    margin: 0 5px;
+    margin: 0px 5px;
    
 }
 
@@ -71,7 +71,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0px 5px;
     border: 2px;
     border-style: solid;
     border-color: #2e3440;
@@ -80,11 +80,11 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: none;
-    box-shadow: none;
-    text-shadow: none;
+    background: #5e81ac;
+    border: 2px;
+    border-style: solid;
+    border-color: #2e3440;
 }
-
 
 #workspaces button.active {
     background-color: #88c0d0;
@@ -180,7 +180,7 @@ button:hover {
 
 @keyframes blink-update {
 	to {
-		background-color: #3b4252;
+		background-color: #2e3440;
 	}
 }
 
